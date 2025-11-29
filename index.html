@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kwaw Ebenezer — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Kwaw Ebenezer — Public Health Specialist, Data & ML Practitioner, AI Enthusiast" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Primary Navigation">
+    <div class="brand">
+      <img src="assets/profile.jpeg" alt="Kwaw Ebenezer" class="brand-avatar">
+      <div>
+        <h1>Kwaw Ebenezer</h1>
+        <p class="muted">Public Health • Data & ML</p>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button id="theme-toggle" class="btn" aria-pressed="false">Dark Mode</button>
+      <a class="btn download" href="assets/CV_Kwaw_Ebenezer.pdf" download="Kwaw_Ebenezer_CV.pdf">Download CV</a>
+      <div class="socials">
+        <a href="https://github.com/kwaw-ebn" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/kwaw-ebenezer-a40117159" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:ebenezer.kwaw@ghs.gov.gh">Email</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MOBILE NAV / TOGGLE -->
+  <button id="sidebar-toggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content" id="main">
+    <!-- Header / Hero -->
+    <header class="hero" id="about">
+      <div class="hero-inner animate-up">
+        <div class="hero-left">
+          <img src="assets/profile.jpeg" alt="Kwaw Ebenezer profile picture" class="hero-avatar">
+        </div>
+        <div class="hero-right">
+          <h2>Kwaw Ebenezer</h2>
+          <h3 class="eyebrow">Public Health Specialist | Data & ML Practitioner | AI Enthusiast</h3>
+          <p class="lead">Results-driven practitioner with 8+ years in public health analytics and digital health innovation. I build ML apps, dashboards, and scalable data solutions — currently exploring cloud engineering & cybersecurity.</p>
+
+          <div class="hero-ctas">
+            <a href="https://github.com/kwaw-ebn" class="btn ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://itn-usage-prediction-nywkrcihz3teyjvze27um8.streamlit.app/" class="btn" target="_blank" rel="noopener">Live Apps</a>
+            <a href="#projects" class="btn">Projects</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Skills -->
+    <section class="section" id="skills" aria-labelledby="skills-heading">
+      <div class="section-inner">
+        <h2 id="skills-heading" class="section-title">Skills</h2>
+        <div class="skills-grid animate-up delay-1">
+          <article class="glass">
+            <h4>Technical</h4>
+            <ul>
+              <li>Python (Pandas, NumPy, Scikit-learn, LightGBM)</li>
+              <li>Streamlit, FastAPI, Flask</li>
+              <li>Transformers & NLP</li>
+              <li>SQL, Power BI, GeoPandas</li>
+              <li>AWS (in progress), CI/CD, GitHub Actions</li>
+            </ul>
+          </article>
+
+          <article class="glass">
+            <h4>Public Health</h4>
+            <ul>
+              <li>M&E design & implementation</li>
+              <li>Survey systems (Kobo Collect)</li>
+              <li>Disease surveillance & outbreak detection</li>
+              <li>SBCC & Community Mobilization</li>
+            </ul>
+          </article>
+
+          <article class="glass">
+            <h4>Soft Skills</h4>
+            <ul>
+              <li>Leadership & stakeholder engagement</li>
+              <li>Project management</li>
+              <li>Report writing & training</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-inner">
+        <h2 id="projects-heading" class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <!-- Project Card 1 -->
+          <article class="project-card glass animate-up">
+            <div class="project-media">
+              <img src="assets/itn.png" alt="ITN Usage Prediction preview">
+            </div>
+            <div class="project-body">
+              <h3>ITN Usage Prediction Web App</h3>
+              <p class="muted">ML model with risk segmentation, CSV/Excel upload and interactive dashboards for malaria prevention.</p>
+              <div class="project-links">
+                <a href="https://itn-usage-prediction-nywkrcihz3teyjvze27um8.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
+                <a href="https://github.com/kwaw-ebn/ITN-Usage-Prediction" target="_blank" rel="noopener" class="chip">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card glass animate-up delay-1">
+            <div class="project-media">
+              <img src="assets/loan.png" alt="Loan Defaulter app preview">
+            </div>
+            <div class="project-body">
+              <h3>Loan Defaulter Risk Prediction</h3>
+              <p class="muted">Supervised classification web app for real-time applicant risk scoring.</p>
+              <div class="project-links">
+                <a href="https://machine-learning-model-to-predict-loan-defaulters-mazkvkvr4t2q.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
+                <a href="https://github.com/kwaw-ebn/Machine-Learning-Model-to-predict-Loan-Defaulters" target="_blank" rel="noopener" class="chip">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card glass animate-up delay-2">
+            <div class="project-media">
+              <img src="assets/movie.png" alt="Movie recommender screenshot">
+            </div>
+            <div class="project-body">
+              <h3>Movie Recommendation System</h3>
+              <p class="muted">Content-based recommender using cosine similarity and metadata for suggestions.</p>
+              <div class="project-links">
+                <a href="https://movierecommendation-khmzfv7djvecuar2hcmc6j.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
+                <a href="https://github.com/kwaw-ebn/Movie_Recommendation" target="_blank" rel="noopener" class="chip">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card glass animate-up delay-2">
+            <div class="project-media">
+              <img src="assets/post.png" alt="post_cs_pain screenshot">
+            </div>
+            <div class="project-body">
+              <h3>Post-Caesarean Pain Prediction Dashboard</h3>
+              <p class="muted">Created a Random Forest-based clinical decision support system predicting pain levels after C-section..</p>
+              <div class="project-links">
+                <a href="https://post-cs-pain-app-lx87gvgzyf3jucg8xq2l5e.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Extra project card template (copy to add) -->
+          <article class="project-card glass animate-up delay-3">
+            <div class="project-media">
+              <img src="assets/surveilai.png" alt="Surveil AI preview">
+            </div>
+            <div class="project-body">
+              <h3>Surveil AI – Outbreak Dashboard</h3>
+              <p class="muted">Hotspot detection, mapping and epidemiological risk scoring (MVP).</p>
+              <div class="project-links">
+                <a href="https://surveilai-e23cnv8c8balpcvxbwjckn.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Add more cards by copying a project-card block and replacing content/images -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <div class="section-inner">
+        <h2 id="experience-heading" class="section-title">Experience</h2>
+
+        <div class="timeline">
+          <div class="timeline-item animate-up">
+            <h3>Public Health Specialist | Data & AI Practitioner — Self-employed</h3>
+            <span class="muted">Jan 2025 — Present</span>
+            <ul>
+              <li>Design & deploy ML solutions using Python, Streamlit & LightGBM</li>
+              <li>Training & advisory for M&E and health surveillance</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item animate-up delay-1">
+            <h3>District Nutrition Officer — Ghana Health Service</h3>
+            <span class="muted">2021 — Present</span>
+            <ul>
+              <li>Led M&E activities, immunization support and program monitoring</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item animate-up delay-2">
+            <h3>Program Coordinator (IPTp) — RootsLink Africa</h3>
+            <span class="muted">2023 — Present</span>
+            <ul>
+              <li>Community mobilization, training & data collection systems</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education" aria-labelledby="education-heading">
+      <div class="section-inner">
+        <h2 id="education-heading" class="section-title">Education</h2>
+        <ul class="education-list animate-up">
+          <li>BSc. Public Health (Community Nutrition), University for Development Studies (2012–2016)</li>
+          <li>Data Science Certificate — Thrive Africa & KTU (2025)</li>
+          <li>Machine Learning & AI — Thrive Africa (2025)</li>
+          <li>Project Management & M&E — University of Washington (2023)</li>
+          <li>AWS Cloud Engineering — Ongoing</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-inner contact-grid animate-up">
+        <div>
+          <h2 id="contact-heading" class="section-title">Contact</h2>
+          <p class="muted">Accra, Ghana • <a href="mailto:ekwaw4545@gmail.com">ekwaw4545@gmail.com</a> • +233 244 837 234</p>
+          <p>Want to collaborate or see code? Send a message or open an issue on GitHub.</p>
+          <div class="contact-ctas">
+            <a href="mailto:ekwaw4545@gmail.com" class="btn">Email Me</a>
+            <a href="https://github.com/kwaw-ebn" class="btn ghost" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+        </div>
+
+        <aside class="mini-cv glass">
+          <h4>Quick CV</h4>
+          <p class="muted">Public Health Specialist • Data & ML</p>
+          <a class="btn download" href="assets/Ebenezer kwaw Cv.pdf" download="Ebenezer kwaw Cv">Download CV (PDF)</a>
+          <ul class="mini-list">
+            <li>8+ years — Public health analytics & M&E</li>
+            <li>Streamlit & Python deployments</li>
+            <li>AWS & Cloud — in progress</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Kwaw Ebenezer • Built with ❤️ • HTML · CSS · JS</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
