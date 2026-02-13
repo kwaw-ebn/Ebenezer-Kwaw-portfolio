@@ -1082,4 +1082,66 @@ button.contact-btn{
 	}
 }
 
+/* Hero adjustments for responsive layout */
+.hero-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Hero text */
+.hero-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-text h3 {
+  font-size: 20px;
+  color: var(--primary-clr);
+}
+
+.hero-text h1 {
+  font-size: 45px;
+  color: var(--primary-clr);
+  margin: 8px 0;
+}
+
+.hero-text h2 {
+  font-size: 22px;
+  color: var(--secondary-heading);
+  margin-bottom: 15px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-avatar {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .hero-text h2 {
+    font-size: 18px;
+  }
+}
+
 /*   *** Media Query Ends ***   */
+
