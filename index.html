@@ -14,7 +14,7 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar" aria-label="Primary Navigation">
     <div class="brand">
-      <alt="Kwaw Ebenezer" class="brand-avatar">
+      <img src="assets/profile.jpeg" alt="Kwaw Ebenezer" class="brand-avatar">
       <div>
         <h1>Kwaw Ebenezer</h1>
         <p class="muted">Public Health • Data & ML</p>
@@ -50,21 +50,22 @@
 
   <!-- MAIN CONTENT -->
   <main class="main-content" id="main">
-    
-    <!-- Header / Hero -->
+
+    <!-- Hero / Header -->
     <header class="hero" id="about">
-      <div class="hero-inner animate-up" style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; text-align:center; padding:0 8%;">
-        <h3 style="font-size:20px; color:var(--primary-clr); opacity:0.85; margin-bottom:10px;">Hello, I'm</h3>
-        <h1 style="font-size:48px; color:var(--primary-clr); margin-bottom:15px;">Kwaw Ebenezer</h1>
-        <h2 style="font-size:22px; color:var(--secondary-heading); margin-bottom:25px;">Public Health Specialist | Data & ML Practitioner | AI Enthusiast</h2>
-        <p style="max-width:600px; color:var(--links-clr); font-size:16px; line-height:1.5; margin-bottom:35px;">
-          Results-driven practitioner with 8+ years in public health analytics and digital health innovation.
-          I build ML apps, dashboards, and scalable data solutions — currently exploring cloud engineering & cybersecurity.
-        </p>
-        <div class="hero-ctas" style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
-          <a href="https://github.com/kwaw-ebn" class="btn ghost" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://itn-usage-prediction-nywkrcihz3teyjvze27um8.streamlit.app/" class="btn" target="_blank" rel="noopener">Live Apps</a>
-          <a href="#projects" class="btn">Projects</a>
+      <div class="hero-inner animate-up">
+        <img src="assets/profile.jpeg" alt="Kwaw Ebenezer profile picture" class="hero-avatar">
+        <div class="hero-text">
+          <h3>Hello, I'm</h3>
+          <h1>Kwaw Ebenezer</h1>
+          <h2>Public Health Specialist | Data & ML Practitioner | AI Enthusiast</h2>
+          <p>Results-driven practitioner with 8+ years in public health analytics and digital health innovation. I build ML apps, dashboards, and scalable data solutions — currently exploring cloud engineering & cybersecurity.</p>
+
+          <div class="hero-ctas">
+            <a href="https://github.com/kwaw-ebn" class="btn ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://itn-usage-prediction-nywkrcihz3teyjvze27um8.streamlit.app/" class="btn" target="_blank" rel="noopener">Live Apps</a>
+            <a href="#projects" class="btn">Projects</a>
+          </div>
         </div>
       </div>
     </header>
@@ -112,7 +113,6 @@
       <div class="section-inner">
         <h2 id="projects-heading" class="section-title">Projects</h2>
         <div class="projects-grid">
-          <!-- Project Card 1 -->
           <article class="project-card glass animate-up">
             <div class="project-media">
               <img src="assets/itn.png" alt="ITN Usage Prediction preview">
@@ -126,39 +126,77 @@
               </div>
             </div>
           </article>
-          <!-- Project Card 2 -->
-          <article class="project-card glass animate-up delay-1">
-            <div class="project-media">
-              <img src="assets/loan.png" alt="Loan Defaulter app preview">
-            </div>
-            <div class="project-body">
-              <h3>Loan Defaulter Risk Prediction</h3>
-              <p class="muted">Supervised classification web app for real-time applicant risk scoring.</p>
-              <div class="project-links">
-                <a href="https://machine-learning-model-to-predict-loan-defaulters-mazkvkvr4t2q.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
-                <a href="https://github.com/kwaw-ebn/Machine-Learning-Model-to-predict-Loan-Defaulters" target="_blank" rel="noopener" class="chip">Source</a>
-              </div>
-            </div>
-          </article>
-          <!-- Project Card 3 -->
-          <article class="project-card glass animate-up delay-2">
-            <div class="project-media">
-              <img src="assets/movie.png" alt="Movie recommender screenshot">
-            </div>
-            <div class="project-body">
-              <h3>Movie Recommendation System</h3>
-              <p class="muted">Content-based recommender using cosine similarity and metadata for suggestions.</p>
-              <div class="project-links">
-                <a href="https://movierecommendation-khmzfv7djvecuar2hcmc6j.streamlit.app/" target="_blank" rel="noopener" class="chip">Live</a>
-                <a href="https://github.com/kwaw-ebn/Movie_Recommendation" target="_blank" rel="noopener" class="chip">Source</a>
-              </div>
-            </div>
-          </article>
+          <!-- Add other project cards as needed -->
         </div>
       </div>
     </section>
 
-    <!-- Experience, Education, Contact & Footer remain unchanged -->
+    <!-- Experience -->
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <div class="section-inner">
+        <h2 id="experience-heading" class="section-title">Experience</h2>
+
+        <div class="timeline">
+          <div class="timeline-item animate-up">
+            <h3>Public Health Specialist | Data & AI Practitioner — Self-employed</h3>
+            <span class="muted">Jan 2025 — Present</span>
+            <ul>
+              <li>Design & deploy ML solutions using Python, Streamlit & LightGBM</li>
+              <li>Training & advisory for M&E and health surveillance</li>
+            </ul>
+          </div>
+          <div class="timeline-item animate-up delay-1">
+            <h3>District Nutrition Officer — Ghana Health Service</h3>
+            <span class="muted">2021 — Present</span>
+            <ul>
+              <li>Led M&E activities, immunization support and program monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education" aria-labelledby="education-heading">
+      <div class="section-inner">
+        <h2 id="education-heading" class="section-title">Education</h2>
+        <ul class="education-list animate-up">
+          <li>BSc. Public Health (Community Nutrition), University for Development Studies (2012–2016)</li>
+          <li>Data Science Certificate — Thrive Africa & KTU (2025)</li>
+          <li>Machine Learning & AI — Thrive Africa (2025)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-inner contact-grid animate-up">
+        <div>
+          <h2 id="contact-heading" class="section-title">Contact</h2>
+          <p class="muted">Accra, Ghana • <a href="mailto:ekwaw4545@gmail.com">ekwaw4545@gmail.com</a> • +233 244 837 234</p>
+          <p>Want to collaborate or see code? Send a message or open an issue on GitHub.</p>
+          <div class="contact-ctas">
+            <a href="mailto:ekwaw4545@gmail.com" class="btn">Email Me</a>
+            <a href="https://github.com/kwaw-ebn" class="btn ghost" target="_blank" rel="noopener">View GitHub</a>
+          </div>
+        </div>
+
+        <aside class="mini-cv glass">
+          <h4>Quick CV</h4>
+          <p class="muted">Public Health Specialist • Data & ML</p>
+          <a class="btn download" href="assets/Ebenezer kwaw Cv.pdf" download="Ebenezer kwaw Cv">Download CV (PDF)</a>
+          <ul class="mini-list">
+            <li>8+ years — Public health analytics & M&E</li>
+            <li>Streamlit & Python deployments</li>
+            <li>AWS & Cloud — in progress</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Kwaw Ebenezer • Built with ❤️ • HTML · CSS · JS</p>
+    </footer>
 
   </main>
 
