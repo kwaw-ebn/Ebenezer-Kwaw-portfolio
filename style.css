@@ -1164,6 +1164,41 @@ button.contact-btn{
     height: 160px;
   }
 }
+/* ===== ABOUT SECTION CLEAN LAYOUT ===== */
+
+.about-personal-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 30px;
+  margin-top: 20px;
+}
+
+.about-personal-info div {
+  display: flex;
+  gap: 6px;
+  font-size: 15px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.about-personal-info span:first-child {
+  font-weight: 600;
+  color: #0f5c5c;
+  min-width: 85px;
+}
+
+.about-personal-info span:last-child {
+  color: #444;
+  word-break: break-word;
+}
+
+/* Mobile fix */
+@media (max-width: 700px) {
+  .about-personal-info {
+    grid-template-columns: 1fr;
+  }
+}
 
 /*   *** Media Query Ends ***   */
+
 
