@@ -1083,6 +1083,70 @@ button.contact-btn{
 	}
 }
 
+/* ===== ABOUT SECTION — STYLE LAYOUT ===== */
+
+.about {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Profile image area */
+.about-image {
+  flex: 0 0 420px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Text area */
+.about-desc {
+  flex: 1;
+}
+
+/* Info grid like Deborah */
+.about-personal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 40px;
+  margin-top: 18px;
+  border-bottom: 1px solid #0f5c5c;
+  padding-bottom: 10px;
+}
+
+.about-personal-info div {
+  display: flex;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.about-personal-info span:first-child {
+  font-weight: 600;
+  color: #0f5c5c;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-personal-info {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 /*   *** Media Query Ends ***   */
+
 
 
