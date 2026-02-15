@@ -1082,64 +1082,7 @@ button.contact-btn{
 		display: none;
 	}
 }
-/* ===== ABOUT SECTION PROFESSIONAL LAYOUT ===== */
-
-.about {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-/* Image side */
-.about-image {
-  flex: 1;
-  min-width: 280px;
-}
-
-/* Text side */
-.about-desc {
-  flex: 2;
-  min-width: 300px;
-}
-
-/* Personal info grid */
-.about-personal-info {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px 30px;
-  margin-top: 15px;
-}
-
-.about-personal-info div {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.about-personal-info span:first-child {
-  font-weight: 600;
-  color: #0f5c5c;
-}
-
-.about-personal-info span:last-child {
-  color: #444;
-  word-break: break-word;
-}
-
-/* Mobile + tablet responsiveness */
-@media (max-width: 900px) {
-
-  .about {
-    flex-direction: column;
-  }
-
-  .about-personal-info {
-    grid-template-columns: 1fr;
-  }
-
-}
 
 /*   *** Media Query Ends ***   */
+
 
