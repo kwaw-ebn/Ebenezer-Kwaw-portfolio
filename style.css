@@ -571,12 +571,21 @@ button.contact-btn{
 }
 .portfolio .gallery{
 	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); /* 3 columns */
+	gap: 20px; /* space between items */
 }
+
 .portfolio .gallery .item{
-	position: relative;
-	width: calc(100% / 3);
+	width: 100%;
+	border: 4px solid transparent;
+	overflow: hidden;
+	cursor: pointer;
+}
+	border: 4px solid transparent;
+	overflow: hidden;
+	cursor: pointer;
+}
 	border: 4px solid transparent;
 	overflow: hidden;
 	cursor: pointer;
