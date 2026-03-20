@@ -633,6 +633,25 @@ button.contact-btn{
 	background-color: var(--bg-clr-one);
 	color: var(--primary-clr);
 }
+/* 🔧 Force equal card sizes */
+.portfolio .gallery .item{
+	position: relative;
+	width: 100%;
+	height: 250px; /* 👈 important */
+	overflow: hidden;
+	border-radius: 6px;
+}
+
+/* 🔧 Fix image scaling */
+.gallery .item img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* 👈 keeps images uniform */
+	display: block;
+}
+.portfolio .gallery{
+	gap: 25px;
+}
 /*   *** Portfolio Section Styling Ends ***   */
 
 /*   *** Testimonials Section Styling Starts ***   */
