@@ -247,73 +247,6 @@ section.reusable .headings h1 {
 .service-box:hover h2, .service-box:hover p {
     color: white;
 }
-/* ================= PROFILE SIDEBAR DESIGN ================= */
-.about-image {
-    position: relative;
-    max-width: 450px;
-}
-
-.img-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-/* The frame/outline behind the image */
-.img-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: -20px;
-    width: 100%;
-    height: 100%;
-    border: 3px solid var(--primary-clr);
-    z-index: -1;
-}
-
-.about-image img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
-}
-
-/* Floating Sidebar (Like the Screenshot) */
-.floating-social {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--primary-clr);
-    display: flex;
-    flex-direction: column;
-    padding: 15px 10px;
-    border-radius: 4px 0 0 4px;
-    gap: 15px;
-}
-
-.floating-social a {
-    color: #fff;
-    font-size: 18px;
-    transition: 0.3s ease;
-}
-
-.floating-social a:hover {
-    color: var(--bg-clr-one);
-    transform: translateX(-3px);
-}
-
-/* Responsiveness for the sidebar */
-@media (max-width: 768px) {
-    .floating-social {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        margin-top: 15px;
-        border-radius: 4px;
-        transform: none;
-    }
-}
 
 /* Skill Tags & Tool Grids */
 .skill-tag {
@@ -354,95 +287,115 @@ section.reusable .headings h1 {
 }
 
 /* =========================================
-   6. PROJECTS / PORTFOLIO SECTION (Fixed for Consistency)
+   6. PROJECTS / PORTFOLIO SECTION
    ========================================= */
-/* Ensure the overall gallery grid is responsive and has good spacing */
+
+/* --- 6.1 Section Headings (Aligning to Digital Marketing Style) --- */
+#projects .headings {
+    text-align: left; /* Aligns headings to the left like your DM section */
+    max-width: 100%;
+    margin: 0 0 35px 0;
+    padding-left: 15px; /* Creates the "off-edge" look */
+    border-left: 4px solid var(--primary-clr); /* Optional: Adds a nice accent line */
+}
+
+#projects .headings h1 {
+    font-size: 28px;
+    color: var(--primary-clr);
+    margin-bottom: 5px;
+}
+
+#projects .headings p {
+    font-size: 15px;
+    color: var(--text-clr);
+    opacity: 0.8;
+}
+
+/* --- 6.2 The Gallery Grid --- */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards on desktop */
-    gap: 25px; /* Increased gap slightly for a cleaner look */
-    margin-bottom: 50px; /* More space before the next category title */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 60px; /* Space between categories */
     width: 100%;
 }
 
-/* 1. Define the Card Container for every project */
+/* --- 6.3 The Project Card (The "Container") --- */
 .gallery .item {
     position: relative;
+    background: #fff; /* White background for the card */
+    border-radius: 12px;
     overflow: hidden;
-    background: #ffffff; /* Give all cards a clean white background */
-    border-radius: 10px; /* Uniform rounded corners */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Add a subtle shadow to make them stand out */
-    cursor: pointer;
-    
-    /* 2. Define a consistent Aspect Ratio (this is key!) */
-    /* This makes the card a perfect 4:3 rectangle, regardless of screen size. */
-    aspect-ratio: 4 / 3; 
-    
-    /* We must remove the fixed height to let the aspect ratio work */
-    height: auto; 
-    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Soft shadow */
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: box-shadow 0.3s ease;
+    aspect-ratio: 16 / 10; /* Keeps all boxes the same size */
+    padding: 20px; /* THIS IS KEY: Ensures images never touch the edges */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery .item:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Slightly stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* 3. Style the image *inside* the card */
+/* --- 6.4 The Image Styling --- */
 .gallery .item img {
-    /* Set the image to take up most of the card, but not 100% */
-    width: 85%;
-    height: 85%;
-    
-    /* Use object-fit: contain to show the whole image *inside* the padded area */
-    /* This prevents stretching but ensures the whole dashboard is visible. */
-    object-fit: contain; 
-    
-    /* A small border around the image itself, like the marketing images have. */
-    border: 1px solid #eef1f6;
-    border-radius: 4px;
-    
-    display: block;
-    transition: transform 0.5s ease;
-    z-index: 1; /* Make sure image is below overlay */
-}
-
-/* Slight zoom effect on hover (optional, but looks nice) */
-.gallery .item:hover img {
-    transform: scale(1.05);
-}
-
-/* Overlay remains the same, but is constrained by the new card dimensions */
-.gallery .item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 85, 92, 0.9); /* Made slightly less transparent */
+    
+    /* 'contain' ensures the full dashboard/app is visible 
+       without stretching, while staying within the card padding.
+    */
+    object-fit: contain; 
+    
+    border-radius: 6px;
+    display: block;
+    transition: 0.4s;
+}
+
+/* --- 6.5 Overlay Styling --- */
+.gallery .item .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 85, 92, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 2; /* Sits on top of the image */
-    border-radius: 10px; /* Matches card corner */
+    transition: opacity 0.3s ease;
+    z-index: 5;
+    padding: 20px;
 }
 
 .gallery .item:hover .overlay {
     opacity: 1;
 }
 
-/* For small screens (from your media query section) */
-@media (max-width: 992px) {
+.gallery .item .overlay a {
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.gallery .item .overlay a:hover {
+    background: #fff;
+    color: var(--primary-clr);
+}
+
+/* --- Responsive Adjustments --- */
+@media(max-width: 1024px) {
     .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 600px) {
+@media(max-width: 650px) {
     .gallery { grid-template-columns: 1fr; }
+    #projects .headings { padding-left: 10px; }
 }
 /* =========================================
    7. RESUME / CV SECTION
