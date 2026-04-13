@@ -287,48 +287,96 @@ section.reusable .headings h1 {
 }
 
 /* =========================================
-   6. PROJECTS / PORTFOLIO SECTION
+   6. PROJECTS / PORTFOLIO SECTION (Fixed for Consistency)
    ========================================= */
+/* Ensure the overall gallery grid is responsive and has good spacing */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards on desktop */
+    gap: 25px; /* Increased gap slightly for a cleaner look */
+    margin-bottom: 50px; /* More space before the next category title */
+    width: 100%;
 }
 
+/* 1. Define the Card Container for every project */
 .gallery .item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
-    height: 250px;
+    background: #ffffff; /* Give all cards a clean white background */
+    border-radius: 10px; /* Uniform rounded corners */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Add a subtle shadow to make them stand out */
+    cursor: pointer;
+    
+    /* 2. Define a consistent Aspect Ratio (this is key!) */
+    /* This makes the card a perfect 4:3 rectangle, regardless of screen size. */
+    aspect-ratio: 4 / 3; 
+    
+    /* We must remove the fixed height to let the aspect ratio work */
+    height: auto; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
 }
 
+.gallery .item:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Slightly stronger shadow on hover */
+}
+
+/* 3. Style the image *inside* the card */
 .gallery .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
+    /* Set the image to take up most of the card, but not 100% */
+    width: 85%;
+    height: 85%;
+    
+    /* Use object-fit: contain to show the whole image *inside* the padded area */
+    /* This prevents stretching but ensures the whole dashboard is visible. */
+    object-fit: contain; 
+    
+    /* A small border around the image itself, like the marketing images have. */
+    border: 1px solid #eef1f6;
+    border-radius: 4px;
+    
+    display: block;
+    transition: transform 0.5s ease;
+    z-index: 1; /* Make sure image is below overlay */
 }
 
+/* Slight zoom effect on hover (optional, but looks nice) */
+.gallery .item:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay remains the same, but is constrained by the new card dimensions */
 .gallery .item .overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(5, 85, 92, 0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 85, 92, 0.9); /* Made slightly less transparent */
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: 0.4s;
+    transition: opacity 0.4s ease;
+    z-index: 2; /* Sits on top of the image */
+    border-radius: 10px; /* Matches card corner */
 }
 
 .gallery .item:hover .overlay {
     opacity: 1;
 }
 
-.gallery .item:hover img {
-    transform: scale(1.1);
+/* For small screens (from your media query section) */
+@media (max-width: 992px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 600px) {
+    .gallery { grid-template-columns: 1fr; }
+}
 /* =========================================
    7. RESUME / CV SECTION
    ========================================= */
