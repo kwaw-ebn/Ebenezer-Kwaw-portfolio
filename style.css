@@ -247,6 +247,73 @@ section.reusable .headings h1 {
 .service-box:hover h2, .service-box:hover p {
     color: white;
 }
+/* ================= PROFILE SIDEBAR DESIGN ================= */
+.about-image {
+    position: relative;
+    max-width: 450px;
+}
+
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* The frame/outline behind the image */
+.img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--primary-clr);
+    z-index: -1;
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Floating Sidebar (Like the Screenshot) */
+.floating-social {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-clr);
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px;
+    border-radius: 4px 0 0 4px;
+    gap: 15px;
+}
+
+.floating-social a {
+    color: #fff;
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.floating-social a:hover {
+    color: var(--bg-clr-one);
+    transform: translateX(-3px);
+}
+
+/* Responsiveness for the sidebar */
+@media (max-width: 768px) {
+    .floating-social {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+        border-radius: 4px;
+        transform: none;
+    }
+}
 
 /* Skill Tags & Tool Grids */
 .skill-tag {
