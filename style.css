@@ -1083,3 +1083,118 @@ button.contact-btn{
 }
 
 /*   *** Media Query Ends ***   */
+
+/* =========================================
+   SKILLS & TOOLS SECTION
+   ========================================= */
+
+/* 1. The Main Container - Uses a 3-column grid for the service boxes */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* 2. Service Box Styling (The Individual Cards) */
+.service-box {
+    padding: 40px;
+    background: var(--bg-white, #ffffff);
+    border-radius: 15px;
+    border: 1px solid var(--bg-clr-three, #eef1f6);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* 3. Icon and Text within Service Boxes */
+.service-box i {
+    font-size: 35px;
+    color: var(--primary-clr, #05555c);
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.service-box h2 {
+    font-size: 24px;
+    color: var(--primary-clr, #05555c);
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    color: var(--text-clr, #3f7277);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 4. Hover State - The "Corporate Flip" effect */
+.service-box:hover {
+    background: var(--primary-clr, #05555c);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(5, 85, 92, 0.2);
+}
+
+.service-box:hover h2, 
+.service-box:hover p, 
+.service-box:hover i {
+    color: #ffffff !important; /* Forces text to white on hover */
+}
+
+/* 5. Tools Grid (For smaller tech icons below the main services) */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.tool-card {
+    background: var(--bg-white, #ffffff);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.tool-card:hover {
+    border-color: var(--primary-clr, #05555c);
+    transform: scale(1.05);
+}
+
+.tool-card i {
+    display: block;
+    font-size: 28px;
+    color: var(--primary-clr, #05555c);
+    margin-bottom: 10px;
+}
+
+.tool-card span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-clr, #3f7277);
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================= */
+@media (max-width: 1100px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    
+    .service-box {
+        padding: 30px;
+        align-items: center;
+        text-align: center;
+    }
+}
