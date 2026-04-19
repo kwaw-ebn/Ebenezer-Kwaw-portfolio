@@ -1198,3 +1198,43 @@ button.contact-btn{
         text-align: center;
     }
 }
+/* Add/Update these specific rules in your style.css */
+
+.about-image {
+    position: relative;
+    z-index: 1; /* Lower priority than the icons */
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.floating-social {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-clr);
+    padding: 15px 30px;
+    border-radius: 40px;
+    display: flex;
+    gap: 25px;
+    
+    /* CRITICAL FIXES BELOW */
+    z-index: 99;             /* Forces it to the very front */
+    pointer-events: auto;    /* Ensures it catches click events */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.floating-social a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+    display: inline-block;   /* Makes the hit area more solid */
+    line-height: 1;         /* Centers the icon vertically */
+}
+
+.floating-social a:hover {
+    color: var(--accent-gold);
+    transform: translateY(-3px);
+}
