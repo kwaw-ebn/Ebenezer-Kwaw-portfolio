@@ -505,3 +505,51 @@ section.reusable .headings h1 {
     .contact-row { flex-direction: column; }
     .resume .column { flex: 1 1 100%; }
 }
+.career-container {
+    width: 84%;
+    margin: -100px auto 0; /* Creates the overlap effect */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.career-item {
+    background: #ffffff;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.career-item:hover {
+    transform: translateY(-5px);
+}
+
+.career-item .icon {
+    width: 55px;
+    height: 55px;
+    background: var(--primary-clr, #05555c);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 22px;
+}
+
+.career-desc h3 {
+    font-size: 20px;
+    color: var(--primary-clr, #05555c);
+    margin-bottom: 2px;
+}
+
+.career-desc p {
+    font-size: 14px;
+    color: #666;
+}
+
