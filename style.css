@@ -10,17 +10,16 @@
 
 html {
     scroll-behavior: smooth;
-    /* Corporate Color Palette */
     --bg-white: #ffffff;
     --bg-clr-one: #f6f9fe;
     --bg-clr-two: #f4f7fc;
     --bg-clr-three: #eef1f6;
-    --primary-clr: #05555c;       /* Deep Teal */
-    --primary-light-clr: #eaf3fa; /* Soft Blue Tint */
-    --links-clr: #186f78;         /* Medium Teal */
-    --text-clr: #3f7277;          /* Muted Teal-Grey */
-    --secondary-heading: #277b6d; /* Forest Teal */
-    --accent-gold: #ffd700;       /* Gold Accent */
+    --primary-clr: #05555c;       
+    --primary-light-clr: #eaf3fa; 
+    --links-clr: #186f78;         
+    --text-clr: #3f7277;          
+    --secondary-heading: #277b6d; 
+    --accent-gold: #ffd700;       
 }
 
 body {
@@ -29,7 +28,6 @@ body {
     background-color: var(--bg-clr-one);
     color: var(--text-clr);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 .Website-container {
@@ -48,10 +46,8 @@ button.btn {
     border-radius: 25px;
     font-size: 16px;
     padding: 12px 25px;
-    letter-spacing: 1px;
     cursor: pointer;
     transition: 0.4s ease;
-    font-weight: 500;
 }
 
 button.btn:hover {
@@ -76,25 +72,22 @@ section.reusable {
     color: var(--links-clr);
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 10px;
 }
 
 .headings h1 {
     font-size: 36px;
     color: var(--primary-clr);
-    font-weight: 700;
+    margin: 10px 0;
 }
 
 /* =========================================
-   3. HOME / HERO SECTION
+   3. HOME / HERO & CAREER ROW
    ========================================= */
 .home {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-color: var(--bg-clr-one);
     display: flex;
-    align-items: center;
     flex-direction: column;
 }
 
@@ -104,7 +97,7 @@ section.reusable {
     height: 12vh;
     top: 0;
     left: 0;
-    padding: 0px 8%;
+    padding: 0 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -113,30 +106,17 @@ section.reusable {
     backdrop-filter: blur(10px);
 }
 
-.navbar .logo img {
-    width: 120px;
-    height: auto;
-}
-
-.navbar ul.nav-links {
-    list-style: none;
-}
+.navbar .logo img { width: 120px; }
 
 .navbar ul.nav-links li {
     display: inline-block;
-    margin: 0px 20px;
+    margin: 0 20px;
 }
 
 .navbar ul.nav-links li a {
     text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
     color: var(--primary-clr);
-    transition: 0.3s;
-}
-
-.navbar ul.nav-links li a:hover {
-    color: var(--links-clr);
+    font-weight: 500;
 }
 
 .hero {
@@ -147,26 +127,10 @@ section.reusable {
     align-items: center;
 }
 
-.hero-text h1 {
-    font-size: 56px;
-    color: var(--primary-clr);
-    margin: 15px 0px 20px;
-    line-height: 1.1;
-}
+.hero-text h1 { font-size: 56px; color: var(--primary-clr); margin: 15px 0; }
+.hero-text h2 { color: var(--secondary-heading); font-size: 22px; margin-bottom: 25px; }
 
-.hero-text h2 {
-    color: var(--secondary-heading);
-    font-weight: 400;
-    font-size: 22px;
-    margin-bottom: 25px;
-}
-
-.hero-text p {
-    max-width: 600px;
-    margin-bottom: 30px;
-}
-
-/* --- Career Highlights Bar --- */
+/* The Career Stats Bar */
 .career-container {
     width: 84%;
     margin: -70px auto 0; 
@@ -184,18 +148,13 @@ section.reusable {
     align-items: center;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
-}
-
-.career-item:hover {
-    transform: translateY(-10px);
 }
 
 .career-item .icon {
     min-width: 60px;
     height: 60px;
     background: var(--primary-clr);
-    color: var(--bg-white);
+    color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -204,33 +163,18 @@ section.reusable {
     font-size: 24px;
 }
 
-.career-desc h3 {
-    font-size: 22px;
-    color: var(--primary-clr);
-    margin-bottom: 2px;
-}
-
 /* =========================================
    4. ABOUT SECTION
    ========================================= */
 .about {
     padding: 140px 8% 80px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 60px;
+    align-items: center;
 }
 
-.about-image {
-    flex: 0 0 40%;
-    position: relative;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 25px;
-    box-shadow: 20px 20px 0 var(--primary-light-clr);
-}
+.about-image { flex: 0 0 40%; position: relative; }
+.about-image img { width: 100%; border-radius: 25px; box-shadow: 20px 20px 0 var(--primary-light-clr); }
 
 .floating-social {
     position: absolute;
@@ -242,49 +186,29 @@ section.reusable {
     border-radius: 40px;
     display: flex;
     gap: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.floating-social a {
-    color: white;
-    font-size: 20px;
-    transition: 0.3s;
-}
+.floating-social a { color: white; font-size: 20px; transition: 0.3s; }
+.floating-social a:hover { color: var(--accent-gold); transform: translateY(-3px); }
 
-.floating-social a:hover {
-    color: var(--accent-gold);
-    transform: translateY(-3px);
-}
-
-.about-desc {
-    flex: 0 0 55%;
-}
+.about-desc { flex: 0 0 55%; }
 
 .about-personal-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin: 35px 0;
+    margin-top: 30px;
     padding: 25px;
     background: var(--bg-white);
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-}
-
-.about-personal-info div span:first-child {
-    display: block;
-    font-weight: 700;
-    color: var(--primary-clr);
-    font-size: 13px;
-    text-transform: uppercase;
 }
 
 /* =========================================
-   5. SKILLS & PROJECTS
+   5. SKILLS & TOOLS (FIXED)
    ========================================= */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
     gap: 25px;
 }
 
@@ -292,23 +216,40 @@ section.reusable {
     padding: 40px;
     background: var(--bg-white);
     border-radius: 15px;
-    transition: 0.4s ease;
     border: 1px solid var(--bg-clr-three);
+    transition: 0.4s ease;
 }
 
 .service-box:hover {
     background: var(--primary-clr);
-    transform: translateY(-8px);
+    color: white;
+    transform: translateY(-10px);
 }
 
-.service-box:hover h2, .service-box:hover p, .service-box:hover i {
-    color: var(--bg-white);
+.service-box h2 { margin: 15px 0; color: var(--primary-clr); }
+.service-box:hover h2 { color: white; }
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-/* Dashboard Gallery Styles */
+.tool-card {
+    background: var(--bg-white);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   6. PROJECTS / GALLERY (FIXED)
+   ========================================= */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
     gap: 30px;
 }
 
@@ -322,62 +263,56 @@ section.reusable {
     justify-content: center;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.gallery .item:hover {
+    transform: translateY(-10px);
 }
 
 .gallery .item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
+    object-fit: contain; /* Ensures dashboards aren't cropped */
 }
 
 /* =========================================
-   6. CONTACT & FOOTER
+   7. CONTACT & FOOTER
    ========================================= */
 .contact-row {
     display: flex;
     background: var(--bg-white);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
 }
 
-.contact-col {
-    padding: 50px;
-}
+.contact-col { flex: 1; padding: 50px; }
 
 .page-footer {
     padding: 60px 8%;
     background: var(--primary-clr);
-    color: var(--bg-white);
+    color: white;
     text-align: center;
 }
 
-.page-footer a {
-    color: var(--accent-gold);
-    text-decoration: none;
-    font-weight: 700;
-}
+.page-footer a { color: var(--accent-gold); text-decoration: none; }
 
 /* =========================================
-   7. MEDIA QUERIES
+   8. MEDIA QUERIES (RESPONSIVE)
    ========================================= */
 @media (max-width: 1100px) {
-    .career-container { width: 90%; }
-    .hero-text h1 { font-size: 44px; }
-    .gallery { grid-template-columns: repeat(2, 1fr); }
+    .services-container, .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 992px) {
     .about { flex-direction: column; text-align: center; }
-    .about-image { width: 80%; margin-bottom: 60px; }
     .career-container { grid-template-columns: 1fr; margin-top: 40px; }
-    .about-personal-info { grid-template-columns: 1fr; }
+    .about-image { width: 80%; }
 }
 
 @media (max-width: 768px) {
     .navbar ul.nav-links { display: none; }
+    .services-container, .gallery { grid-template-columns: 1fr; }
     .hero-text h1 { font-size: 36px; }
-    .gallery { grid-template-columns: 1fr; }
     .contact-row { flex-direction: column; }
 }
