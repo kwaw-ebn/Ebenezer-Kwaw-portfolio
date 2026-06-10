@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kwaw-ebn.github.io/Ebenezer-Kwaw-portfolio/sitemap.xml
