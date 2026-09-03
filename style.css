@@ -1728,3 +1728,66 @@ button.contact-btn:hover{background:#fff;color:var(--ink)}
     flex:none!important;
   }
 }
+
+/* ===== Functional Formspree contact form ===== */
+.contact-row{align-items:center!important}
+.contact-col.column-1{flex:0 0 38%!important}
+.contact-col.column-2{flex:1!important}
+.form-2{width:100%!important;display:flex!important;flex-direction:column!important;gap:18px!important}
+.contact-fields{display:grid!important;grid-template-columns:1fr 1fr!important;gap:16px!important}
+.form-2 .inputGroup{position:relative!important;width:100%!important;margin:0!important}
+.form-2 .inputGroup input,
+.form-2 .inputGroup select,
+.form-2 .inputGroup textarea{
+  width:100%!important;
+  color:#fff!important;
+  background:rgba(255,255,255,.08)!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  border-radius:14px!important;
+  outline:none!important;
+  font:inherit!important;
+  font-size:1rem!important;
+  transition:border-color .2s,box-shadow .2s,background .2s!important;
+}
+.form-2 .inputGroup input,
+.form-2 .inputGroup select{height:58px!important;padding:20px 16px 8px!important}
+.form-2 .inputGroup textarea{min-height:170px!important;padding:24px 16px 14px!important;resize:vertical!important}
+.form-2 .inputGroup select{appearance:auto!important;color:#fff!important}
+.form-2 .inputGroup select option{color:var(--ink)!important;background:#fff!important}
+.form-2 .inputGroup input:focus,
+.form-2 .inputGroup select:focus,
+.form-2 .inputGroup textarea:focus{
+  border-color:#72d6d3!important;
+  background:rgba(255,255,255,.12)!important;
+  box-shadow:0 0 0 4px rgba(24,167,165,.16)!important;
+}
+.form-2 .inputGroup label{
+  position:absolute!important;
+  left:16px!important;
+  top:17px!important;
+  margin:0!important;
+  color:rgba(255,255,255,.67)!important;
+  font-size:.98rem!important;
+  pointer-events:none!important;
+  transition:.18s ease!important;
+}
+.form-2 .inputGroup input:focus+label,
+.form-2 .inputGroup input:not(:placeholder-shown)+label,
+.form-2 .inputGroup textarea:focus+label,
+.form-2 .inputGroup textarea:not(:placeholder-shown)+label{
+  top:6px!important;
+  font-size:.72rem!important;
+  color:#8be1de!important;
+}
+.form-2 .inputGroup .select-label{
+  top:5px!important;
+  font-size:.72rem!important;
+  color:#8be1de!important;
+}
+.form-2 .form-button{width:100%!important;min-height:54px!important;margin:0!important;cursor:pointer!important}
+.form-note{color:rgba(255,255,255,.58)!important;font-size:.82rem!important;text-align:center!important;margin:0!important}
+.form-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+@media(max-width:760px){
+  .contact-fields{grid-template-columns:1fr!important}
+  .contact-col.column-1,.contact-col.column-2{flex:1 1 100%!important;width:100%!important}
+}
