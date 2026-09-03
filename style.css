@@ -1661,3 +1661,70 @@ button.contact-btn:hover{background:#fff;color:var(--ink)}
   .website-btn{margin:12px 0 0 8px}
   .gallery .item{height:350px!important;min-height:350px!important}
 }
+
+/* ===== Compact circular hero portrait ===== */
+.home .hero{
+  display:flex!important;
+  grid-template-columns:none!important;
+  position:relative!important;
+  padding-right:clamp(370px,34vw,540px)!important;
+}
+.hero .hero-text{
+  width:100%!important;
+  max-width:860px!important;
+}
+.hero-profile{
+  position:absolute!important;
+  z-index:3!important;
+  right:clamp(45px,8vw,140px)!important;
+  top:50%!important;
+  transform:translateY(-48%)!important;
+  width:clamp(250px,23vw,350px)!important;
+  height:clamp(250px,23vw,350px)!important;
+  aspect-ratio:1/1!important;
+  display:block!important;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  border:6px solid rgba(255,255,255,.88)!important;
+  background:#0b3e53!important;
+  box-shadow:0 22px 55px rgba(0,0,0,.32),0 0 0 18px rgba(24,167,165,.11)!important;
+}
+.hero-profile img{
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  object-position:center 16%!important;
+  transform:none!important;
+}
+@media(max-width:950px){
+  .home .hero{padding-right:300px!important}
+  .hero-profile{
+    right:35px!important;
+    width:235px!important;
+    height:235px!important;
+  }
+}
+@media(max-width:760px){
+  .home .hero{
+    display:flex!important;
+    flex-direction:column!important;
+    padding-right:20px!important;
+    padding-bottom:145px!important;
+  }
+  .hero-profile{
+    position:relative!important;
+    right:auto!important;
+    top:auto!important;
+    transform:none!important;
+    width:220px!important;
+    height:220px!important;
+    margin:34px auto 0!important;
+    flex:none!important;
+  }
+}
