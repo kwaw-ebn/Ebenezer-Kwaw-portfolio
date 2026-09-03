@@ -1791,3 +1791,89 @@ button.contact-btn:hover{background:#fff;color:var(--ink)}
   .contact-fields{grid-template-columns:1fr!important}
   .contact-col.column-1,.contact-col.column-2{flex:1 1 100%!important;width:100%!important}
 }
+
+/* ===== Clear professional contact fields ===== */
+.Website-container section.contact-form{
+  background:linear-gradient(135deg,#082039,#0b3e53)!important;
+  padding:104px clamp(24px,7vw,110px)!important;
+}
+.Website-container .contact-form .contact-row{
+  background:#fff!important;
+  border:1px solid #dbe5ec!important;
+  box-shadow:0 28px 70px rgba(2,18,32,.28)!important;
+}
+.Website-container .contact-form .contactTitle h2{color:#071b2e!important}
+.Website-container .contact-form .contactTitle p{color:#607487!important}
+.Website-container .contact-form .contactSocialMedia a{
+  background:#eaf4f5!important;
+  color:#0a7c82!important;
+  border:1px solid #cbe1e4!important;
+}
+.contact-form .form-2 .inputGroup{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+}
+.contact-form .form-2 .inputGroup label,
+.contact-form .form-2 .inputGroup .select-label{
+  position:static!important;
+  order:1!important;
+  display:block!important;
+  color:#17354d!important;
+  font-size:.88rem!important;
+  font-weight:750!important;
+  line-height:1.3!important;
+  pointer-events:auto!important;
+  transform:none!important;
+}
+.contact-form .form-2 .inputGroup input,
+.contact-form .form-2 .inputGroup select,
+.contact-form .form-2 .inputGroup textarea{
+  order:2!important;
+  display:block!important;
+  background:#f7fafc!important;
+  color:#071b2e!important;
+  border:1.5px solid #b8c9d5!important;
+  border-radius:12px!important;
+  box-shadow:none!important;
+}
+.contact-form .form-2 .inputGroup input,
+.contact-form .form-2 .inputGroup select{
+  height:54px!important;
+  padding:0 15px!important;
+}
+.contact-form .form-2 .inputGroup textarea{
+  min-height:170px!important;
+  padding:14px 15px!important;
+}
+.contact-form .form-2 .inputGroup input:hover,
+.contact-form .form-2 .inputGroup select:hover,
+.contact-form .form-2 .inputGroup textarea:hover{border-color:#7395a8!important}
+.contact-form .form-2 .inputGroup input:focus,
+.contact-form .form-2 .inputGroup select:focus,
+.contact-form .form-2 .inputGroup textarea:focus{
+  background:#fff!important;
+  color:#071b2e!important;
+  border-color:#0a7c82!important;
+  box-shadow:0 0 0 4px rgba(10,124,130,.13)!important;
+}
+.contact-form .form-2 .inputGroup input:focus+label,
+.contact-form .form-2 .inputGroup input:not(:placeholder-shown)+label,
+.contact-form .form-2 .inputGroup textarea:focus+label,
+.contact-form .form-2 .inputGroup textarea:not(:placeholder-shown)+label{
+  position:static!important;
+  color:#17354d!important;
+  font-size:.88rem!important;
+}
+.contact-form .form-2 .inputGroup select,
+.contact-form .form-2 .inputGroup select option{
+  color:#071b2e!important;
+  background-color:#f7fafc!important;
+}
+.contact-form .form-2 .form-button{
+  background:#0a6c72!important;
+  color:#fff!important;
+  border:0!important;
+}
+.contact-form .form-2 .form-button:hover{background:#071b2e!important}
+.contact-form .form-note{color:#607487!important}
