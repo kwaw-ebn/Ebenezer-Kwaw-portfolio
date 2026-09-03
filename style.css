@@ -1877,3 +1877,54 @@ button.contact-btn:hover{background:#fff;color:var(--ink)}
 }
 .contact-form .form-2 .form-button:hover{background:#071b2e!important}
 .contact-form .form-note{color:#607487!important}
+
+/* ===== Visible contact icons and restored logo ===== */
+.navbar .logo{
+  display:flex!important;
+  align-items:center!important;
+  min-width:88px!important;
+}
+.navbar .logo img{
+  display:block!important;
+  width:88px!important;
+  height:auto!important;
+  max-height:62px!important;
+  object-fit:contain!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.contact-form .contactSocialMedia{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:12px!important;
+  margin-top:28px!important;
+}
+.contact-form .contactSocialMedia a{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:46px!important;
+  height:46px!important;
+  padding:0!important;
+  border-radius:12px!important;
+  background:#e7f4f4!important;
+  border:1.5px solid #b9dcdd!important;
+  color:#086c72!important;
+  opacity:1!important;
+  visibility:visible!important;
+  box-shadow:0 7px 18px rgba(7,27,46,.08)!important;
+  transition:.2s ease!important;
+}
+.contact-form .contactSocialMedia a i{
+  display:block!important;
+  color:#086c72!important;
+  font-size:1.18rem!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+.contact-form .contactSocialMedia a:hover{
+  background:#086c72!important;
+  border-color:#086c72!important;
+  transform:translateY(-2px)!important;
+}
+.contact-form .contactSocialMedia a:hover i{color:#fff!important}
