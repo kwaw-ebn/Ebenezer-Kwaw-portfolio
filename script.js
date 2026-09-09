@@ -10,41 +10,87 @@ if(menuButton&&navLinks){
   navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('active')));
 }
 
-// Featured public health technology project
 window.addEventListener('DOMContentLoaded',()=>{
+  // Remove the previous oversized featured block if an older cached version created it.
+  document.querySelector('#malaria-outreach-featured-project')?.remove();
+
   const projects=document.querySelector('#projects');
-  if(!projects||document.querySelector('#malaria-outreach-featured-project')) return;
+  if(!projects||document.querySelector('#malaria-outreach-card')) return;
 
-  const featured=document.createElement('article');
-  featured.id='malaria-outreach-featured-project';
-  featured.setAttribute('aria-label','Featured project: Rootslink Africa Malaria Outreach Intelligence Platform');
-  featured.innerHTML=`
-    <div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px;align-items:center;max-width:1180px;margin:28px auto 42px;padding:26px;border:1px solid rgba(8,99,75,.22);border-radius:22px;background:linear-gradient(135deg,#f4fbf8 0%,#ffffff 60%);box-shadow:0 18px 45px rgba(20,55,45,.08);">
-      <div>
-        <span style="display:inline-block;padding:7px 12px;border-radius:999px;background:#e6f5ee;color:#08634b;font-size:.8rem;font-weight:800;letter-spacing:.03em;">FEATURED • PUBLIC HEALTH • DATA • RESPONSIBLE AI</span>
-        <h3 style="font-size:clamp(1.65rem,3vw,2.35rem);line-height:1.12;margin:16px 0 12px;color:#173c32;">Rootslink Africa Malaria Outreach Intelligence Platform</h3>
-        <p style="font-size:1rem;line-height:1.7;color:#4e625c;margin:0 0 14px;">A working digital public health prototype that connects malaria outreach data capture, explainable priority classification, structured follow-up, field-note intelligence through MalaGuide, and community education support.</p>
-        <p style="font-size:.92rem;line-height:1.65;color:#5c6e68;margin:0 0 20px;"><strong style="color:#173c32;">Stack:</strong> HTML, CSS, JavaScript, FastAPI, PostgreSQL, GitHub Pages and Render. <strong style="color:#173c32;">Status:</strong> Prototype / Pilot.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://kwaw-ebn.github.io/ebenezer-kwaw-personal-website/insights/malaria-outreach-intelligence-platform.html" target="_blank" rel="noopener" style="display:inline-block;padding:11px 15px;border-radius:10px;background:#08634b;color:#fff;text-decoration:none;font-weight:700;">View Case Study ↗</a>
-          <a href="https://kwaw-ebn.github.io/rootslink-africa-malaria-app/" target="_blank" rel="noopener" style="display:inline-block;padding:11px 15px;border-radius:10px;background:#fff;color:#08634b;border:1px solid #9fcbbd;text-decoration:none;font-weight:700;">Live Demo ↗</a>
-          <a href="https://github.com/kwaw-ebn/rootslink-africa-malaria-app" target="_blank" rel="noopener" style="display:inline-block;padding:11px 15px;border-radius:10px;background:#fff;color:#173c32;border:1px solid #cedbd6;text-decoration:none;font-weight:700;">GitHub Repo ↗</a>
-        </div>
-      </div>
-      <div style="overflow:hidden;border-radius:16px;border:1px solid #d9e8e2;background:#eef8f4;">
-        <img src="https://kwaw-ebn.github.io/ebenezer-kwaw-personal-website/assets/insights/malaria-outreach-intelligence-hero.svg" alt="Malaria outreach intelligence platform with public health dashboard and explainable decision support" style="display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;">
-      </div>
-    </div>`;
+  // Find the Public Health / AI project group by its visible heading.
+  const headings=[...projects.querySelectorAll('h1,h2,h3,h4,h5,h6,.title,.category-title')];
+  const targetHeading=headings.find(el=>{
+    const t=(el.textContent||'').toLowerCase();
+    return t.includes('public health')&&(t.includes('ai')||t.includes('artificial intelligence'));
+  }) || headings.find(el=>(el.textContent||'').toLowerCase().includes('public health'));
 
-  const heading=projects.querySelector('.section-header,.section-heading,.heading,h2,h1');
-  if(heading){
-    const parent=heading.closest('.section-header,.section-heading,.heading')||heading;
-    parent.insertAdjacentElement('afterend',featured);
-  }else{
-    projects.prepend(featured);
+  if(!targetHeading) return;
+
+  // Locate the existing card grid immediately associated with that category.
+  let scope=targetHeading.parentElement;
+  let grid=null;
+  for(let i=0;i<5&&scope&&!grid;i++,scope=scope.parentElement){
+    const candidates=[...scope.querySelectorAll('.project-grid,.projects-grid,.portfolio-grid,.project-container,.projects-container,.row,.grid')];
+    grid=candidates.find(g=>g.querySelector('.project-card,.project-item,.portfolio-item,.card'))||null;
+  }
+  if(!grid){
+    let next=targetHeading.nextElementSibling;
+    while(next&&!grid){
+      if(next.querySelector?.('.project-card,.project-item,.portfolio-item,.card')) grid=next;
+      next=next.nextElementSibling;
+    }
+  }
+  if(!grid) return;
+
+  const sample=grid.querySelector('.project-card,.project-item,.portfolio-item,.card');
+  if(!sample) return;
+
+  // Clone an existing project card so the new project matches the portfolio's exact dimensions and styling.
+  const card=sample.cloneNode(true);
+  card.id='malaria-outreach-card';
+
+  const img=card.querySelector('img');
+  if(img){
+    img.src='https://kwaw-ebn.github.io/ebenezer-kwaw-personal-website/assets/insights/malaria-outreach-intelligence-hero.svg';
+    img.alt='Roots Link Africa Malaria Outreach Intelligence Platform dashboard and public health decision support';
+    img.removeAttribute('srcset');
   }
 
-  const responsive=document.createElement('style');
-  responsive.textContent='@media(max-width:780px){#malaria-outreach-featured-project>div{grid-template-columns:1fr!important;padding:18px!important;margin:20px 14px 32px!important;}}';
-  document.head.appendChild(responsive);
+  const title=card.querySelector('h2,h3,h4,h5,.project-title,.title');
+  if(title) title.textContent='Malaria Outreach Intelligence Platform';
+
+  const paragraphs=[...card.querySelectorAll('p')];
+  if(paragraphs[0]) paragraphs[0].textContent='Digital public health prototype for malaria outreach monitoring, explainable priority classification, follow-up tracking and community education.';
+
+  // Replace technology/tag labels when the existing card provides them.
+  const tagContainer=card.querySelector('.tags,.tech-stack,.project-tags,.skills-used');
+  if(tagContainer) tagContainer.innerHTML='<span>Public Health</span><span>AI</span><span>FastAPI</span><span>PostgreSQL</span>';
+
+  const links=[...card.querySelectorAll('a')];
+  const destinations=[
+    ['View Case Study','https://kwaw-ebn.github.io/ebenezer-kwaw-personal-website/insights/malaria-outreach-intelligence-platform.html'],
+    ['Live Demo','https://kwaw-ebn.github.io/rootslink-africa-malaria-app/'],
+    ['GitHub','https://github.com/kwaw-ebn/rootslink-africa-malaria-app']
+  ];
+  links.forEach((a,i)=>{
+    const d=destinations[Math.min(i,destinations.length-1)];
+    a.href=d[1];
+    a.target='_blank';
+    a.rel='noopener';
+    const label=a.querySelector('span')||a;
+    if(label===a||label.children.length===0) label.textContent=d[0];
+    a.setAttribute('aria-label',d[0]+' for Malaria Outreach Intelligence Platform');
+  });
+
+  // If the template has fewer than three links, add compact links while preserving card styling.
+  if(links.length<3){
+    const actionHost=card.querySelector('.project-links,.links,.buttons,.project-buttons')||card;
+    destinations.slice(links.length).forEach(d=>{
+      const a=document.createElement('a');
+      a.href=d[1];a.target='_blank';a.rel='noopener';a.textContent=d[0];a.className=links[0]?.className||'project-link';
+      actionHost.appendChild(a);
+    });
+  }
+
+  grid.prepend(card);
 });
