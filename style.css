@@ -2011,6 +2011,8 @@ button.contact-btn:hover{background:#fff;color:var(--ink)}
   position:relative!important;
   inset:auto!important;
   display:flex!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
   flex:1 1 auto!important;
   width:100%!important;
   height:auto!important;
