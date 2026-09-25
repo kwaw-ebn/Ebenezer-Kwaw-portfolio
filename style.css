@@ -1928,3 +1928,198 @@ button.contact-btn:hover{background:#fff;color:var(--ink)}
   transform:translateY(-2px)!important;
 }
 .contact-form .contactSocialMedia a:hover i{color:#fff!important}
+
+/* ===== Unified responsive project showcase (2026-09) ===== */
+.portfolio.reusable{
+  padding-inline:clamp(20px,6vw,92px)!important;
+  overflow:hidden;
+}
+.portfolio>.headings{
+  max-width:760px;
+  margin-inline:auto;
+  text-align:center;
+}
+.portfolio>.headings h2{
+  font-size:clamp(2.35rem,5vw,4.7rem)!important;
+  line-height:1.04!important;
+  letter-spacing:-.045em!important;
+}
+.portfolio .project-category{
+  width:min(100%,1240px);
+  margin:clamp(58px,7vw,88px) auto 0!important;
+}
+.portfolio .project-category .sub-category{
+  display:flex!important;
+  align-items:center;
+  gap:18px;
+  margin:0 0 24px!important;
+}
+.portfolio .project-category .sub-category::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:linear-gradient(90deg,rgba(116,213,210,.48),transparent);
+}
+.portfolio .project-category .sub-category h2{
+  margin:0!important;
+  max-width:760px;
+  font-size:clamp(1.35rem,2.4vw,2rem)!important;
+  line-height:1.2!important;
+}
+.portfolio .gallery{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  gap:26px!important;
+}
+.portfolio .gallery .item{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  min-width:0!important;
+  height:auto!important;
+  min-height:100%!important;
+  overflow:hidden!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  border-radius:22px!important;
+  background:#0d2942!important;
+  box-shadow:0 16px 40px rgba(0,0,0,.16)!important;
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease!important;
+}
+.portfolio .gallery .item:hover{
+  transform:translateY(-6px)!important;
+  border-color:rgba(116,213,210,.52)!important;
+  box-shadow:0 24px 55px rgba(0,0,0,.28)!important;
+}
+.portfolio .gallery .item>img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  flex:0 0 auto!important;
+  width:100%!important;
+  height:210px!important;
+  min-height:210px!important;
+  aspect-ratio:auto!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  opacity:1!important;
+  transform:none!important;
+  border:0!important;
+}
+.portfolio .gallery .item:hover>img{transform:none!important}
+.portfolio .gallery .item .overlay{
+  position:relative!important;
+  inset:auto!important;
+  display:flex!important;
+  flex:1 1 auto!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:24px!important;
+  background:linear-gradient(155deg,#123653 0%,#0b263e 100%)!important;
+  opacity:1!important;
+  visibility:visible!important;
+  overflow:visible!important;
+}
+.portfolio .gallery .item .project-info{
+  display:flex!important;
+  flex:1!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  min-width:0!important;
+  max-height:none!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+.portfolio .gallery .item .project-info h3{
+  display:block!important;
+  margin:0 0 14px!important;
+  color:#fff!important;
+  font-size:1.2rem!important;
+  line-height:1.3!important;
+  letter-spacing:-.015em!important;
+}
+.portfolio .gallery .item .project-info p{
+  display:block!important;
+  margin:0 0 8px!important;
+  color:rgba(231,243,248,.76)!important;
+  font-size:.875rem!important;
+  line-height:1.5!important;
+}
+.portfolio .gallery .item .project-info p:last-of-type{margin-bottom:20px!important}
+.portfolio .gallery .item .project-info p strong{
+  color:#bcecea!important;
+  font-weight:750!important;
+}
+.portfolio .gallery .item .project-info a{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-width:0!important;
+  min-height:42px!important;
+  margin:8px 8px 0 0!important;
+  padding:10px 15px!important;
+  border:1px solid rgba(146,229,226,.48)!important;
+  border-radius:10px!important;
+  background:rgba(5,21,34,.34)!important;
+  color:#bcecea!important;
+  font-size:.82rem!important;
+  font-weight:800!important;
+  line-height:1.2!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  backdrop-filter:none!important;
+}
+.portfolio .gallery .item .project-info a:first-of-type{
+  margin-top:auto!important;
+  background:#13a4a3!important;
+  border-color:#13a4a3!important;
+  color:#fff!important;
+}
+.portfolio .gallery .item .project-info a:hover{
+  transform:translateY(-2px)!important;
+  border-color:#f3b24a!important;
+  background:#f3b24a!important;
+  color:#071b2e!important;
+}
+@media(max-width:1050px){
+  .portfolio .gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:22px!important;
+  }
+  .portfolio .gallery .item>img{
+    height:220px!important;
+    min-height:220px!important;
+  }
+}
+@media(max-width:700px){
+  .portfolio.reusable{padding-inline:18px!important}
+  .portfolio .project-category{margin-top:56px!important}
+  .portfolio .project-category .sub-category{
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:18px!important;
+  }
+  .portfolio .project-category .sub-category::after{margin-top:13px}
+  .portfolio .gallery{grid-template-columns:1fr!important;gap:20px!important}
+  .portfolio .gallery .item{border-radius:18px!important}
+  .portfolio .gallery .item>img{
+    height:210px!important;
+    min-height:210px!important;
+  }
+  .portfolio .gallery .item .overlay{padding:22px 20px!important}
+}
+@media(max-width:390px){
+  .portfolio .gallery .item>img{
+    height:190px!important;
+    min-height:190px!important;
+  }
+  .portfolio .gallery .item .project-info h3{font-size:1.1rem!important}
+  .portfolio .gallery .item .project-info p{font-size:.82rem!important}
+  .portfolio .gallery .item .project-info a{
+    width:100%!important;
+    margin-right:0!important;
+  }
+}
